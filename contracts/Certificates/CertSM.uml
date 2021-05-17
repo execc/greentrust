@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_YG_HEIQCEemTgbhBWNrAzg" name="Sert">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_YK0eMIQCEemTgbhBWNrAzg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_YHe2UIQCEemTgbhBWNrAzg" name="CertSM">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_oWzdoIRPEemTgbhBWNrAzg" name="statusCert" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_9bghgISGEemTgbhBWNrAzg" name="dateCreate" visibility="public" type="_toFdgISxEemsqLp0vZVMuw"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_9jlfcISGEemTgbhBWNrAzg" name="dateEnd" visibility="public" type="_toFdgISxEemsqLp0vZVMuw"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_9u27UISGEemTgbhBWNrAzg" name="supplier" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_91yCsISGEemTgbhBWNrAzg" name="owner" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_hEWCMISHEemTgbhBWNrAzg" name="price" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Qr02oIS-EemsqLp0vZVMuw" name="idWallet" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <region xmi:type="uml:Region" xmi:id="_YHfdYIQCEemTgbhBWNrAzg" name="Region1">
+      <transition xmi:type="uml:Transition" xmi:id="_fMgtYIQEEemTgbhBWNrAzg" source="__TzE0IQCEemTgbhBWNrAzg" target="__8rpwIQCEemTgbhBWNrAzg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_-2ALYIRLEemTgbhBWNrAzg" source="_3JUKUIQ8EemTgbhBWNrAzg" target="_wWWV0IRJEemTgbhBWNrAzg">
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_7KHEQIRSEemTgbhBWNrAzg" name="variable=&quot;Выставлен на продажу&quot;">
+          <language>bean</language>
+          <body>[&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;statusCert&quot;,&#xD;
+ &quot;expression&quot;: &quot;'Trading'&quot;&#xD;
+},&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;price&quot;,&#xD;
+ &quot;expression&quot;: &quot;signal.price&quot;&#xD;
+}&#xD;
+&#xD;
+]</body>
+        </effect>
+        <trigger xmi:type="uml:Trigger" xmi:id="_yMgvwIRVEemTgbhBWNrAzg" name="Offer" event="_yDMbsIRVEemTgbhBWNrAzg"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_7A86gIRNEemTgbhBWNrAzg" source="_3JUKUIQ8EemTgbhBWNrAzg" target="_iG1mUIRNEemTgbhBWNrAzg">
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_blnQ0IRUEemTgbhBWNrAzg" name="variable=&quot;Погашен&quot;">
+          <language>bean</language>
+          <body>{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;statusCert&quot;,&#xD;
+ &quot;expression&quot;: &quot;'Redeemed'&quot;&#xD;
+}</body>
+        </effect>
+        <trigger xmi:type="uml:Trigger" xmi:id="_x2NoQIRYEemTgbhBWNrAzg" name="ToRedeemed" event="_xt9EIIRYEemTgbhBWNrAzg"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_KRSRAIROEemTgbhBWNrAzg" source="_3JUKUIQ8EemTgbhBWNrAzg" target="_hos40IRNEemTgbhBWNrAzg">
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_WNlcMIRUEemTgbhBWNrAzg" name="variable=&quot;Истек срок действия&quot;">
+          <language>bean</language>
+          <body>{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;statusCert&quot;,&#xD;
+ &quot;expression&quot;: &quot;'Expired'&quot;&#xD;
+}</body>
+        </effect>
+        <trigger xmi:type="uml:Trigger" xmi:id="_hlZFIIRYEemTgbhBWNrAzg" name="ToExpired" event="_e74FMIRYEemTgbhBWNrAzg"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_e9b6gIRPEemTgbhBWNrAzg" source="_iG1mUIRNEemTgbhBWNrAzg" target="_eJdf4IRPEemTgbhBWNrAzg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_f1XoEIRPEemTgbhBWNrAzg" source="_hos40IRNEemTgbhBWNrAzg" target="_eJdf4IRPEemTgbhBWNrAzg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_R2MskIRREemTgbhBWNrAzg" source="__8rpwIQCEemTgbhBWNrAzg" target="_3JUKUIQ8EemTgbhBWNrAzg">
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_J6x4sIRSEemTgbhBWNrAzg" name="variable=&quot;Активный&quot;">
+          <language>bean</language>
+          <body>[&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;statusCert&quot;,&#xD;
+ &quot;expression&quot;: &quot;'Active'&quot;&#xD;
+},&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;supplier&quot;,&#xD;
+ &quot;expression&quot;: &quot;signal.supplier&quot;&#xD;
+},&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;idWallet&quot;,&#xD;
+ &quot;expression&quot;: &quot;signal.idWallet&quot;&#xD;
+},&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;owner&quot;,&#xD;
+ &quot;expression&quot;: &quot;supplier&quot;&#xD;
+}&#xD;
+]</body>
+        </effect>
+        <trigger xmi:type="uml:Trigger" xmi:id="_aOLHUIRVEemTgbhBWNrAzg" name="CreateCert" event="_aEcjkIRVEemTgbhBWNrAzg"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_dlaswIRREemTgbhBWNrAzg" source="_wWWV0IRJEemTgbhBWNrAzg" target="_3JUKUIQ8EemTgbhBWNrAzg">
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_ohP2QIRTEemTgbhBWNrAzg" name="variable=&quot;Активный&quot;">
+          <language>bean</language>
+          <body>{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;statusCert&quot;,&#xD;
+ &quot;expression&quot;: &quot;'Active'&quot;&#xD;
+}</body>
+        </effect>
+        <trigger xmi:type="uml:Trigger" xmi:id="_5qXzAIRWEemTgbhBWNrAzg" name="Aborting" event="_5ZmzIIRWEemTgbhBWNrAzg"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_iywUUIRREemTgbhBWNrAzg" source="_wWWV0IRJEemTgbhBWNrAzg" target="_3JUKUIQ8EemTgbhBWNrAzg">
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_zODXMIRTEemTgbhBWNrAzg" name="variable=&quot;Активный&quot;">
+          <language>bean</language>
+          <body>[&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;statusCert&quot;,&#xD;
+ &quot;expression&quot;: &quot;'Active'&quot;&#xD;
+},&#xD;
+{&#xD;
+&quot;type&quot;: &quot;EventAction&quot;,&#xD;
+&quot;code&quot;: &quot;WalletSM&quot;,&#xD;
+&quot;pid&quot;: &quot;signal.receiver&quot;,&#xD;
+&quot;event&quot;: &quot;SignalTransfer&quot;,&#xD;
+	&quot;parameters&quot;: {&#xD;
+		&quot;receiver&quot;: &quot;idWallet&quot;,&#xD;
+		&quot;amount&quot;: &quot;price&quot;&#xD;
+	}&#xD;
+},&#xD;
+{&#xD;
+&quot;type&quot;: &quot;SetAction&quot;,&#xD;
+&quot;target&quot;: &quot;idWallet&quot;,&#xD;
+&quot;expression&quot;: &quot;signal.receiver&quot;&#xD;
+}&#xD;
+]</body>
+        </effect>
+        <trigger xmi:type="uml:Trigger" xmi:id="_Gkit8IRYEemTgbhBWNrAzg" name="Buy" event="_F7OEIIRYEemTgbhBWNrAzg"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_bztJoIR0EemTgbhBWNrAzg" source="_wWWV0IRJEemTgbhBWNrAzg" target="_iG1mUIRNEemTgbhBWNrAzg">
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_9bc8UIR0EemTgbhBWNrAzg" name="variable=&quot;Погашен&quot;">
+          <language>bean</language>
+          <body>{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;statusCert&quot;,&#xD;
+ &quot;expression&quot;: &quot;'Redeemed'&quot;&#xD;
+}</body>
+        </effect>
+        <trigger xmi:type="uml:Trigger" xmi:id="_wFmgEIR1EemTgbhBWNrAzg" name="ToShortRedeemed" event="_6CgOEIR1EemTgbhBWNrAzg"/>
+      </transition>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="__TzE0IQCEemTgbhBWNrAzg" name="Initial1"/>
+      <subvertex xmi:type="uml:State" xmi:id="__8rpwIQCEemTgbhBWNrAzg" name="Issuing"/>
+      <subvertex xmi:type="uml:State" xmi:id="_3JUKUIQ8EemTgbhBWNrAzg" name="Active"/>
+      <subvertex xmi:type="uml:State" xmi:id="_wWWV0IRJEemTgbhBWNrAzg" name="Trading"/>
+      <subvertex xmi:type="uml:State" xmi:id="_hos40IRNEemTgbhBWNrAzg" name="Expired"/>
+      <subvertex xmi:type="uml:State" xmi:id="_iG1mUIRNEemTgbhBWNrAzg" name="Redeemed"/>
+      <subvertex xmi:type="uml:FinalState" xmi:id="_eJdf4IRPEemTgbhBWNrAzg" name="FinalState20"/>
+    </region>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_Z8BAUIRVEemTgbhBWNrAzg" name="SignalCreateCert">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_n-oOwIS-EemsqLp0vZVMuw" name="supplier" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_n-rSEIS-EemsqLp0vZVMuw" name="idWallet" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_aEcjkIRVEemTgbhBWNrAzg" name="CreateCert" signal="_Z8BAUIRVEemTgbhBWNrAzg"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_x3SGoIRVEemTgbhBWNrAzg" name="SignalOffer">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_8pz8AITMEemsqLp0vZVMuw" name="price">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_yDMbsIRVEemTgbhBWNrAzg" name="Offer" signal="_x3SGoIRVEemTgbhBWNrAzg"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_5GnlsIRWEemTgbhBWNrAzg" name="SignalAborting"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_5ZmzIIRWEemTgbhBWNrAzg" name="Aborting" signal="_5GnlsIRWEemTgbhBWNrAzg"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="__LHpUIRXEemTgbhBWNrAzg" name="SignalBuy">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_4BZRUITKEemsqLp0vZVMuw" name="receiver">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_F7OEIIRYEemTgbhBWNrAzg" name="Buy" signal="__LHpUIRXEemTgbhBWNrAzg"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_erxzsIRYEemTgbhBWNrAzg" name="SignalToExpired"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_e74FMIRYEemTgbhBWNrAzg" name="ToExpired" signal="_erxzsIRYEemTgbhBWNrAzg"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_xjAYYIRYEemTgbhBWNrAzg" name="SignalToRedeemed"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_xt9EIIRYEemTgbhBWNrAzg" name="ToRedeemed" signal="_xjAYYIRYEemTgbhBWNrAzg"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_51HSUIR1EemTgbhBWNrAzg" name="SignalToShortRedeemed"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_6CgOEIR1EemTgbhBWNrAzg" name="ToShortRedeemed" signal="_51HSUIR1EemTgbhBWNrAzg"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_toFdgISxEemsqLp0vZVMuw" name="Long"/>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_I-rrkIRMEemTgbhBWNrAzg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_I-sSoIRMEemTgbhBWNrAzg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Model>

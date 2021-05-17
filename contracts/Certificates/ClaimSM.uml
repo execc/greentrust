@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_3jJe4IP1EemTgbhBWNrAzg" name="GreenTrust">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_3qutkIP1EemTgbhBWNrAzg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_Kko2AIP6EemTgbhBWNrAzg" name="ClaimSM">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_4NcNEIR5EemTgbhBWNrAzg" name="statusClaim" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_OcvN4ISHEemTgbhBWNrAzg" name="totalProduced" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_OgK8YISHEemTgbhBWNrAzg" name="certIssued" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Oisr8ISHEemTgbhBWNrAzg" name="certInIssue" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Om-H8ISHEemTgbhBWNrAzg" name="countEnergy" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_y5p6EISLEemTgbhBWNrAzg" name="idMeter" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_U8JgUISSEemTgbhBWNrAzg" name="idSupplier" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ukwqgISYEemTgbhBWNrAzg" name="balanceGrToken" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_b-PyoISpEemsqLp0vZVMuw" name="certs" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dWVm8ISpEemsqLp0vZVMuw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dWgmEISpEemsqLp0vZVMuw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_vyVYcIS6EemsqLp0vZVMuw" name="idWallet" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_goilcITTEemsqLp0vZVMuw" name="dateStart" visibility="public" type="_rCh4EITTEemsqLp0vZVMuw"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_vPUooITTEemsqLp0vZVMuw" name="dateEnd" visibility="public" type="_rCh4EITTEemsqLp0vZVMuw"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_myOEAITUEemsqLp0vZVMuw" name="idCompensatingClaim" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_BC7-wITVEemsqLp0vZVMuw" name="maxCountEnergy" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <region xmi:type="uml:Region" xmi:id="_MYYEgIP6EemTgbhBWNrAzg" name="Region1">
+      <transition xmi:type="uml:Transition" xmi:id="__TFz0IP6EemTgbhBWNrAzg" source="_Nax8sIP6EemTgbhBWNrAzg" target="_OAOzIIP6EemTgbhBWNrAzg">
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_G3sOcISPEemTgbhBWNrAzg" name="Initialized">
+          <language>bean</language>
+          <body>[&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+  &quot;target&quot;: &quot;totalProduced&quot;,&#xD;
+  &quot;expression&quot;: &quot;0&quot;&#xD;
+},&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+  &quot;target&quot;: &quot;certIssued&quot;,&#xD;
+  &quot;expression&quot;: &quot;0&quot;&#xD;
+},&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+  &quot;target&quot;: &quot;certInIssue&quot;,&#xD;
+  &quot;expression&quot;: &quot;0&quot;&#xD;
+},&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+  &quot;target&quot;: &quot;countEnergy&quot;,&#xD;
+  &quot;expression&quot;: &quot;0&quot;&#xD;
+},&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+  &quot;target&quot;: &quot;idMeter&quot;,&#xD;
+  &quot;expression&quot;: &quot;'id01'&quot;&#xD;
+},&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+  &quot;target&quot;: &quot;idSupplier&quot;,&#xD;
+  &quot;expression&quot;: &quot;signer.name&quot;&#xD;
+},&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+  &quot;target&quot;: &quot;balanceGrToken&quot;,&#xD;
+  &quot;expression&quot;: &quot;1000&quot;&#xD;
+}&#xD;
+]</body>
+        </effect>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_pgv28IP8EemTgbhBWNrAzg" guard="_02cE8ISNEemTgbhBWNrAzg" source="_OAOzIIP6EemTgbhBWNrAzg" target="_dv8iYIP8EemTgbhBWNrAzg">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="_02cE8ISNEemTgbhBWNrAzg" name="CheckInCountEnergy">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_02cE8YSNEemTgbhBWNrAzg" name="CheckInCountEnergy">
+            <language>bean</language>
+            <body>{&#xD;
+	&quot;type&quot;: &quot;EvalGuard&quot;,&#xD;
+	&quot;expression&quot;: &quot;totalProduced - certIssued - certInIssue - signal.inCountEnergy >= 0&quot;&#xD;
+}</body>
+          </specification>
+        </ownedRule>
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_o_6IYIR4EemTgbhBWNrAzg" name="variable=&quot;Отправлена в СР&quot;">
+          <language>bean</language>
+          <body>[{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;statusClaim&quot;,&#xD;
+ &quot;expression&quot;: &quot;'SentToMC'&quot;&#xD;
+},&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;countEnergy&quot;,&#xD;
+ &quot;expression&quot;: &quot;signal.inCountEnergy&quot;&#xD;
+},&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;idWallet&quot;,&#xD;
+ &quot;expression&quot;: &quot;signal.inIdWallet&quot;&#xD;
+},&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;dateStart&quot;,&#xD;
+ &quot;expression&quot;: &quot;signal.dateStart&quot;&#xD;
+},&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;dateEnd&quot;,&#xD;
+ &quot;expression&quot;: &quot;signal.dateEnd&quot;&#xD;
+}&#xD;
+]</body>
+        </effect>
+        <trigger xmi:type="uml:Trigger" xmi:id="_HRi64IR5EemTgbhBWNrAzg" name="SendToMC" event="_HAXEQIR5EemTgbhBWNrAzg"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_r3zN4IP8EemTgbhBWNrAzg" source="_dv8iYIP8EemTgbhBWNrAzg" target="_v1UBwIP7EemTgbhBWNrAzg">
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_pYk_sIR7EemTgbhBWNrAzg" name="variable=&quot;На верификации&quot;">
+          <language>bean</language>
+          <body>{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;statusClaim&quot;,&#xD;
+ &quot;expression&quot;: &quot;'OnVerification'&quot;&#xD;
+}</body>
+        </effect>
+        <trigger xmi:type="uml:Trigger" xmi:id="_93_YQIR9EemTgbhBWNrAzg" name="OnVerification" event="_9nWUMIR9EemTgbhBWNrAzg"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_8wLY4IP_EemTgbhBWNrAzg" source="_fxI54IQDEemTgbhBWNrAzg" target="_sEHrQIP_EemTgbhBWNrAzg">
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_kRNyYIR9EemTgbhBWNrAzg" name="variable=&quot;Сертификат выпущен&quot;">
+          <language>bean</language>
+          <body>{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;statusClaim&quot;,&#xD;
+ &quot;expression&quot;: &quot;'AddCert'&quot;&#xD;
+}</body>
+        </effect>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_Ab6q0IQAEemTgbhBWNrAzg" source="_sEHrQIP_EemTgbhBWNrAzg" target="__mCywIP_EemTgbhBWNrAzg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_ByiH8ISOEemTgbhBWNrAzg" source="_OAOzIIP6EemTgbhBWNrAzg" target="_OAOzIIP6EemTgbhBWNrAzg">
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_Gm15kISQEemTgbhBWNrAzg" name="addBalance">
+          <language>bean</language>
+          <body>{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;totalProduced&quot;,&#xD;
+ &quot;expression&quot;: &quot;signal.inTotalProduced&quot;&#xD;
+}</body>
+        </effect>
+        <trigger xmi:type="uml:Trigger" xmi:id="_bUxWoISPEemTgbhBWNrAzg" name="Deposit" event="_asnxgISPEemTgbhBWNrAzg"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_S9LMMITUEemsqLp0vZVMuw" source="_v1UBwIP7EemTgbhBWNrAzg" target="_R0dQoITUEemsqLp0vZVMuw">
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_V_1PcITVEemsqLp0vZVMuw">
+          <language>bean</language>
+          <body>{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+  &quot;target&quot;: &quot;maxCountEnergy&quot;,&#xD;
+  &quot;expression&quot;: &quot;signal.maxCountEnergy&quot;&#xD;
+}</body>
+        </effect>
+        <trigger xmi:type="uml:Trigger" xmi:id="_QGXhsITVEemsqLp0vZVMuw" name="ProvideMaxCountEnergy" event="_PyyeYITVEemsqLp0vZVMuw"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_Uh9_wITUEemsqLp0vZVMuw" source="_R0dQoITUEemsqLp0vZVMuw" target="_sEHrQIP_EemTgbhBWNrAzg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_WAzVQITUEemsqLp0vZVMuw" guard="_2RfY8ITVEemsqLp0vZVMuw" source="_R0dQoITUEemsqLp0vZVMuw" target="_fxI54IQDEemTgbhBWNrAzg">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="_2RfY8ITVEemsqLp0vZVMuw">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_2RfY8YTVEemsqLp0vZVMuw">
+            <language>bean</language>
+            <body>{&#xD;
+	&quot;type&quot;: &quot;EvalGuard&quot;,&#xD;
+	&quot;expression&quot;: &quot;maxCountEnergy &lt; countEnergy&quot;&#xD;
+}</body>
+          </specification>
+        </ownedRule>
+      </transition>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_Nax8sIP6EemTgbhBWNrAzg" name="Initial1"/>
+      <subvertex xmi:type="uml:State" xmi:id="_OAOzIIP6EemTgbhBWNrAzg" name="CreateClaim"/>
+      <subvertex xmi:type="uml:State" xmi:id="_v1UBwIP7EemTgbhBWNrAzg" name="ToVerification"/>
+      <subvertex xmi:type="uml:State" xmi:id="_dv8iYIP8EemTgbhBWNrAzg" name="ToCenter"/>
+      <subvertex xmi:type="uml:State" xmi:id="_sEHrQIP_EemTgbhBWNrAzg" name="CallSubProcessSert">
+        <entry xmi:type="uml:OpaqueBehavior" xmi:id="_Z_7r0ISpEemsqLp0vZVMuw" name="CreateCerts">
+          <language>bean</language>
+          <body>{&#xD;
+    &quot;type&quot;: &quot;IterateAction&quot;,&#xD;
+    &quot;from&quot;: &quot;0&quot;,&#xD;
+    &quot;to&quot;: &quot;maxCountEnergy&quot;,&#xD;
+    &quot;step&quot;: &quot;1&quot;,&#xD;
+    &quot;action&quot;: [&#xD;
+        {&#xD;
+            &quot;type&quot;: &quot;CreateAction&quot;,&#xD;
+            &quot;code&quot;: &quot;CertSM&quot;,&#xD;
+            &quot;target&quot;: &quot;certs&quot;&#xD;
+        },&#xD;
+		{&#xD;
+            &quot;type&quot;: &quot;EventAction&quot;,&#xD;
+            &quot;code&quot;: &quot;CertSM&quot;,&#xD;
+            &quot;pid&quot;: &quot;certs[index]&quot;,&#xD;
+			&quot;event&quot;: &quot;SignalCreateCert&quot;,&#xD;
+			&quot;parameters&quot;: {&#xD;
+				&quot;supplier&quot;: &quot;idSupplier&quot;,&#xD;
+				&quot;idWallet&quot;: &quot;idWallet&quot;}&#xD;
+        }&#xD;
+    ]&#xD;
+}</body>
+        </entry>
+      </subvertex>
+      <subvertex xmi:type="uml:FinalState" xmi:id="__mCywIP_EemTgbhBWNrAzg" name="FinalState17"/>
+      <subvertex xmi:type="uml:State" xmi:id="_fxI54IQDEemTgbhBWNrAzg" name="CreateClaimDispute">
+        <entry xmi:type="uml:OpaqueBehavior" xmi:id="_qfa5EITVEemsqLp0vZVMuw">
+          <language>bean</language>
+          <body>[&#xD;
+	{&#xD;
+		&quot;type&quot;: &quot;CreateAction&quot;,&#xD;
+		&quot;code&quot;: &quot;ClaimSM&quot;,&#xD;
+		&quot;target&quot;: &quot;idCompensatingClaim&quot;&#xD;
+	},&#xD;
+	{&#xD;
+		&quot;type&quot;: &quot;EventAction&quot;,&#xD;
+		&quot;code&quot;: &quot;ClaimSM&quot;,&#xD;
+		&quot;pid&quot;: &quot;idCompensatingClaim&quot;,&#xD;
+		&quot;event&quot;: &quot;SignalDeposit&quot;,&#xD;
+		&quot;parameters&quot;: {&#xD;
+			&quot;inTotalProduced&quot;: &quot;countEnergy - maxCountEnergy&quot;&#xD;
+		}&#xD;
+	},&#xD;
+		{&#xD;
+		&quot;type&quot;: &quot;EventAction&quot;,&#xD;
+		&quot;code&quot;: &quot;ClaimSM&quot;,&#xD;
+		&quot;pid&quot;: &quot;idCompensatingClaim&quot;,&#xD;
+		&quot;event&quot;: &quot;SignalSendToMC&quot;,&#xD;
+		&quot;parameters&quot;: {&#xD;
+			&quot;inCountEnergy&quot;: &quot;0&quot;,&#xD;
+			&quot;inIdWallet&quot;: &quot;idWallet&quot;,&#xD;
+			&quot;dateStart&quot;: &quot;dateStart&quot;,&#xD;
+			&quot;dateEnd&quot;: &quot;dateEnd&quot;&#xD;
+		}&#xD;
+	}&#xD;
+]</body>
+        </entry>
+      </subvertex>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_R0dQoITUEemsqLp0vZVMuw" name="Choice14" kind="choice"/>
+    </region>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_G2iZ4IR5EemTgbhBWNrAzg" name="SignalSendToMC">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_tOppoISMEemTgbhBWNrAzg" name="inCountEnergy">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_U_5bQIS7EemsqLp0vZVMuw" name="inIdWallet">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_IcT1gITUEemsqLp0vZVMuw" name="dateStart" type="_rCh4EITTEemsqLp0vZVMuw"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_KjOesITUEemsqLp0vZVMuw" name="dateEnd" type="_rCh4EITTEemsqLp0vZVMuw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_HAXEQIR5EemTgbhBWNrAzg" name="SendToMC" signal="_G2iZ4IR5EemTgbhBWNrAzg"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_9dKdcIR9EemTgbhBWNrAzg" name="SignalOnVerification"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_9nWUMIR9EemTgbhBWNrAzg" name="OnVerification" signal="_9dKdcIR9EemTgbhBWNrAzg"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_aFIjcIR-EemTgbhBWNrAzg" name="SignalVerificationCompleated"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_aRiAsIR-EemTgbhBWNrAzg" name="VerificationCompleated" signal="_aFIjcIR-EemTgbhBWNrAzg"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_fjELwIR-EemTgbhBWNrAzg" name="AddCert"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_5jWoYIR_EemTgbhBWNrAzg" name="SignalOnDisput"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_5zNCQIR_EemTgbhBWNrAzg" name="OnDisput" signal="_5jWoYIR_EemTgbhBWNrAzg"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_5xw7AISDEemTgbhBWNrAzg" name="SignalAddPartCert"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_593dUISDEemTgbhBWNrAzg" name="AddPartCert" signal="_5xw7AISDEemTgbhBWNrAzg"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_aZuDoISPEemTgbhBWNrAzg" name="SignalDeposit">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_v1BuoISPEemTgbhBWNrAzg" name="inTotalProduced">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_asnxgISPEemTgbhBWNrAzg" name="Deposit" signal="_aZuDoISPEemTgbhBWNrAzg"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_rCh4EITTEemsqLp0vZVMuw" name="Long"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_PsawoITVEemsqLp0vZVMuw" name="SignalMaxCountEnergy">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_PsawoYTVEemsqLp0vZVMuw" name="maxCountEnergy">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_PyyeYITVEemsqLp0vZVMuw" name="SignalMaxCountEnergyE" signal="_PsawoITVEemsqLp0vZVMuw"/>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_1JqswIP6EemTgbhBWNrAzg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1Jr64IP6EemTgbhBWNrAzg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Model>

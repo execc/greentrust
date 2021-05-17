@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_fCY7QIS4EemsqLp0vZVMuw" name="WalletSM">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_fIT9EIS4EemsqLp0vZVMuw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_fC1AIIS4EemsqLp0vZVMuw" name="WalletSM">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ohwRUIS7EemsqLp0vZVMuw" name="balance" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <region xmi:type="uml:Region" xmi:id="_fC5RkIS4EemsqLp0vZVMuw" name="Region1">
+      <transition xmi:type="uml:Transition" xmi:id="_9Djo0IS4EemsqLp0vZVMuw" source="_yFG-QIS4EemsqLp0vZVMuw" target="_507wsIS4EemsqLp0vZVMuw">
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_T2hz4ITFEemsqLp0vZVMuw">
+          <language>bean</language>
+          <body>{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+  &quot;target&quot;: &quot;balance&quot;,&#xD;
+  &quot;expression&quot;: &quot;1000&quot;&#xD;
+}</body>
+        </effect>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_OGtAwIS5EemsqLp0vZVMuw" source="_BcmFoIS5EemsqLp0vZVMuw" target="_Ca3EsIS5EemsqLp0vZVMuw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_QXvPQIS5EemsqLp0vZVMuw" source="_507wsIS4EemsqLp0vZVMuw" target="_BcmFoIS5EemsqLp0vZVMuw">
+        <trigger xmi:type="uml:Trigger" xmi:id="_BwjQgITGEemsqLp0vZVMuw" name="Stop" event="_BojyIITGEemsqLp0vZVMuw"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_Rvtu0IS5EemsqLp0vZVMuw" guard="_GW004ITCEemsqLp0vZVMuw" source="_507wsIS4EemsqLp0vZVMuw" target="_507wsIS4EemsqLp0vZVMuw">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="_GW004ITCEemsqLp0vZVMuw" name="checkBalance">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_GW004YTCEemsqLp0vZVMuw">
+            <language>bean</language>
+            <body>{&#xD;
+	&quot;type&quot;: &quot;EvalGuard&quot;,&#xD;
+	&quot;expression&quot;: &quot;balance - signal.amount >= 0&quot;&#xD;
+}</body>
+          </specification>
+        </ownedRule>
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_0ANC4ITBEemsqLp0vZVMuw" name="variable=&quot;списание">
+          <language>bean</language>
+          <body>{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;balance&quot;,&#xD;
+ &quot;expression&quot;: &quot;balance - signal.amount&quot;&#xD;
+}</body>
+        </effect>
+        <trigger xmi:type="uml:Trigger" xmi:id="_wTeH4ITAEemsqLp0vZVMuw" name="Withdraw" event="_vodcAITAEemsqLp0vZVMuw"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_-rs14IS5EemsqLp0vZVMuw" source="_507wsIS4EemsqLp0vZVMuw" target="_507wsIS4EemsqLp0vZVMuw">
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_bGA2MITBEemsqLp0vZVMuw" name="variable=&quot;пополнение&quot;">
+          <language>bean</language>
+          <body>{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;balance&quot;,&#xD;
+ &quot;expression&quot;: &quot;balance + signal.amount&quot;&#xD;
+}</body>
+        </effect>
+        <trigger xmi:type="uml:Trigger" xmi:id="_plX4MITAEemsqLp0vZVMuw" name="Deposit" event="_o9IzgITAEemsqLp0vZVMuw"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_aKPVAITCEemsqLp0vZVMuw" guard="_JGq0YITEEemsqLp0vZVMuw" source="_507wsIS4EemsqLp0vZVMuw" target="_507wsIS4EemsqLp0vZVMuw">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="_JGq0YITEEemsqLp0vZVMuw" name="checkBalance">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_JGq0YYTEEemsqLp0vZVMuw" name="checkBalance">
+            <language>bean</language>
+            <body>{&#xD;
+	&quot;type&quot;: &quot;EvalGuard&quot;,&#xD;
+	&quot;expression&quot;: &quot;balance - signal.amount >= 0&quot;&#xD;
+}</body>
+          </specification>
+        </ownedRule>
+        <effect xmi:type="uml:OpaqueBehavior" xmi:id="_xdm4YITDEemsqLp0vZVMuw">
+          <language>bean</language>
+          <body>[&#xD;
+{&#xD;
+ &quot;type&quot;: &quot;SetAction&quot;,&#xD;
+ &quot;target&quot;: &quot;balance&quot;,&#xD;
+ &quot;expression&quot;: &quot;balance - signal.amount&quot;&#xD;
+},&#xD;
+{&#xD;
+&quot;type&quot;: &quot;EventAction&quot;,&#xD;
+&quot;code&quot;: &quot;WalletSM&quot;,&#xD;
+&quot;pid&quot;: &quot;signal.receiver&quot;,&#xD;
+&quot;event&quot;: &quot;SignalDeposit&quot;,&#xD;
+&quot;parameters&quot;: {&#xD;
+	&quot;amount&quot;: &quot;signal.amount&quot;&#xD;
+	}&#xD;
+}&#xD;
+]</body>
+        </effect>
+        <trigger xmi:type="uml:Trigger" xmi:id="_H5Y-YITDEemsqLp0vZVMuw" name="Transfer" event="_HsOsIITDEemsqLp0vZVMuw"/>
+      </transition>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_yFG-QIS4EemsqLp0vZVMuw" name="InitialWalletSM"/>
+      <subvertex xmi:type="uml:State" xmi:id="_507wsIS4EemsqLp0vZVMuw" name="Actived"/>
+      <subvertex xmi:type="uml:State" xmi:id="_BcmFoIS5EemsqLp0vZVMuw" name="Disabled"/>
+      <subvertex xmi:type="uml:FinalState" xmi:id="_Ca3EsIS5EemsqLp0vZVMuw" name="FinalWalletSM"/>
+    </region>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_ow010ITAEemsqLp0vZVMuw" name="SignalDeposit">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_fjvlwITBEemsqLp0vZVMuw" name="amount">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_o9IzgITAEemsqLp0vZVMuw" name="Deposit" signal="_ow010ITAEemsqLp0vZVMuw"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_vcW5sITAEemsqLp0vZVMuw" name="SignalWithdraw">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_oOu_8ITBEemsqLp0vZVMuw" name="amount">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_vodcAITAEemsqLp0vZVMuw" name="Withdraw" signal="_vcW5sITAEemsqLp0vZVMuw"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_5KikUITCEemsqLp0vZVMuw" name="SignalTransfer">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Bw8ZcITDEemsqLp0vZVMuw" name="receiver">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_G4mPwITDEemsqLp0vZVMuw" name="amount">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_HsOsIITDEemsqLp0vZVMuw" name="Transfer" signal="_5KikUITCEemsqLp0vZVMuw"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_Bi3Z0ITGEemsqLp0vZVMuw" name="SignalStop"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_BojyIITGEemsqLp0vZVMuw" name="SignalStop" signal="_Bi3Z0ITGEemsqLp0vZVMuw"/>
+</uml:Model>
